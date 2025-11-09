@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Count from "./Count";
 
 export default function Counting() {
     
@@ -15,15 +16,24 @@ export default function Counting() {
         setCount(prevCount => prevCount - 1);  
     }
 
+    const styles = {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        width: "100%",
+        gap: "16px"
+    }
+
     return (
-        <>
+        <div style={styles}>
             <button onClick={subtract}>-</button>
-            {count}
+            {/* <h2>{count}</h2> */}
+            <Count number = {count}/>
             <button onClick={add}>+</button>
             
             
             {/* <button onClick={}>-</button> */}
             {/* <button onClick={handleClick}>{label}</button> */}
-        </>
+        </div>
     );
 }
